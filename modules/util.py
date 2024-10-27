@@ -10,7 +10,9 @@ def natural_sort_key(s, regex=re.compile('([0-9]+)')):
 
 
 def listfiles(dirname):
+    print("dirname:", dirname)
     filenames = [os.path.join(dirname, x) for x in sorted(os.listdir(dirname), key=natural_sort_key) if not x.startswith(".")]
+    print("filenames:", filenames)
     return [file for file in filenames if os.path.isfile(file)]
 
 
